@@ -1,6 +1,5 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Doctor {
     //Autoincrement
@@ -16,7 +15,6 @@ public class Doctor {
     }
 
     public Doctor(String name, String speciality) {
-        System.out.println("The name of the doctor is: " + name);
         id = ++nextId;
         this.name = name;
         this.speciality = speciality;
@@ -24,10 +22,6 @@ public class Doctor {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -46,14 +40,14 @@ public class Doctor {
         this.speciality = speciality;
     }
 
-    List<AvailableAppointment> appointments = new ArrayList<>();
+    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
     public void addAvailableAppointment(LocalDate date, String time) {
-        appointments.add(new AvailableAppointment(date, time));
+        availableAppointments.add(new AvailableAppointment(date, time));
     }
 
-    public List<AvailableAppointment> getAvailableAppointments() {
-        return appointments;
+    public ArrayList<AvailableAppointment> getAvailableAppointments() {
+        return availableAppointments;
     }
 
     /*
@@ -76,10 +70,6 @@ public class Doctor {
 
         public int getId() {
             return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
         }
 
         public LocalDate getDate() {

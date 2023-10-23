@@ -1,5 +1,5 @@
 /*
-    En la práctica, todos los atributos de una clase deberían ser privado y solo acceder a ellos
+    En la práctica, todos los atributos de una clase deberían ser privados y solo acceder a ellos
     a través de los métodos getter y setter.
  */
 public class Patient {
@@ -45,10 +45,6 @@ public class Patient {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
