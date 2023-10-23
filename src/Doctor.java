@@ -1,6 +1,5 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Doctor {
     //Autoincrement
@@ -16,7 +15,6 @@ public class Doctor {
     }
 
     public Doctor(String name, String speciality) {
-        System.out.println("The name of the doctor is: " + name);
         id = ++nextId;
         this.name = name;
         this.speciality = speciality;
@@ -24,10 +22,6 @@ public class Doctor {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -46,19 +40,16 @@ public class Doctor {
         this.speciality = speciality;
     }
 
-    List<AvailableAppointment> appointments = new ArrayList<>();
+    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
     public void addAvailableAppointment(LocalDate date, String time) {
-        appointments.add(new AvailableAppointment(date, time));
+        availableAppointments.add(new AvailableAppointment(date, time));
     }
 
-    public List<AvailableAppointment> getAvailableAppointments() {
-        return appointments;
+    public ArrayList<AvailableAppointment> getAvailableAppointments() {
+        return availableAppointments;
     }
 
-    /*
-     La clase Appointment está definida como una clase interna estática dentro de la clase Doctor. Esto significa que cada instancia de Doctor comparte la misma definición de Appointment, y no es necesario crear una instancia de Doctor para crear una instancia de Appointment. Esto se debe a que las clases internas estáticas se asocian directamente con la clase externa, no con instancias específicas de la clase externa.
-     */
     public static class AvailableAppointment {
         private static int nextId = 0;
         private int id;
@@ -76,10 +67,6 @@ public class Doctor {
 
         public int getId() {
             return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
         }
 
         public LocalDate getDate() {
