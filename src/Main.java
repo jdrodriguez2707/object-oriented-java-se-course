@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import static ui.UIMenu.showMenu;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,7 +14,11 @@ public class Main {
         // Show available appointments
         System.out.println("The name of the doctor is: " + doctor1.getName() + "\n");
         for (Doctor.AvailableAppointment availableAppointment : doctor1.getAvailableAppointments()) {
-            System.out.println("Appointment " + availableAppointment.getId() + "\n" + "Date: " + availableAppointment.getDate() + "\n" + "Time: " + availableAppointment.getTime() + "\n");
+            System.out.println("Appointment " + availableAppointment.getId() + "\n" + "Date: "
+                    + availableAppointment.getDate() + "\n" + "Time: " + availableAppointment.getTime()
+                    + "\n");
         }
+
+        showMenu();
     }
 }

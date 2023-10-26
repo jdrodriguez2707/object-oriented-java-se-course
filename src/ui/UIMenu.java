@@ -3,10 +3,36 @@ package ui;
 import java.util.Scanner;
 
 public class UIMenu {
-    public static final String[] MONTHS = {
+    /*public static final String[] MONTHS = {
             "January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
             "November", "December"
-    };
+    };*/
+
+    private enum Month {
+        JANUARY("January"),
+        FEBRUARY("February"),
+        MARCH("March"),
+        APRIL("April"),
+        MAY("May"),
+        JUNE("June"),
+        JULY("July"),
+        AUGUST("August"),
+        SEPTEMBER("September"),
+        OCTOBER("October"),
+        NOVEMBER("November"),
+        DECEMBER("December");
+
+        private final String lowercase;
+
+        private Month(String lowercase) {
+            this.lowercase = lowercase;
+        }
+
+        public String getLower() {
+            return lowercase;
+        }
+    }
+
     public static void showMenu() {
         Scanner read = new Scanner(System.in);
         int response = 0;
@@ -50,7 +76,7 @@ public class UIMenu {
                 case 1 -> {
                     System.out.println("::Book an appointment");
                     for (int i = 1; i < 4; i++) {
-                        System.out.println(i + ". " + MONTHS[i - 1]);
+                        System.out.println(i + ". " + Month.values()[i - 1].getLower());
                     }
                 }
                 case 2 -> System.out.println("::My appointments");
