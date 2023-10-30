@@ -15,8 +15,8 @@ public class Doctor extends User {
     }
 
     public Doctor(String name, String email, String speciality) {
-        super(name, email);
-        this.speciality = speciality;
+        super(name, email); // Enviar los atributos a la superclase
+        this.speciality = speciality; // Sobreescritura de constructor
     }
 
     public String getSpeciality() {
@@ -37,9 +37,14 @@ public class Doctor extends User {
         return availableAppointments;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "Speciality: " + speciality + "\n" + "Available Appointments: " + "\n" + availableAppointments.toString();
+    }
+
     /*
-     La clase Appointment está definida como una clase interna estática dentro de la clase Doctor. Esto significa que cada instancia de Doctor comparte la misma definición de Appointment, y no es necesario crear una instancia de Doctor para crear una instancia de Appointment. Esto se debe a que las clases internas estáticas se asocian directamente con la clase externa, no con instancias específicas de la clase externa.
-     */
+         La clase Appointment está definida como una clase interna estática dentro de la clase Doctor. Esto significa que cada instancia de Doctor comparte la misma definición de Appointment, y no es necesario crear una instancia de Doctor para crear una instancia de Appointment. Esto se debe a que las clases internas estáticas se asocian directamente con la clase externa, no con instancias específicas de la clase externa.
+         */
     public static class AvailableAppointment {
         private LocalDate date;
         private String time;
@@ -66,6 +71,11 @@ public class Doctor extends User {
 
         public void setTime(String time) {
             this.time = time;
+        }
+
+        @Override
+        public String toString() {
+            return "Appointment " + "\n" + "Date: " + date + "\n" + "Time: " + time + "\n";
         }
     }
 }
