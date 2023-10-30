@@ -1,5 +1,5 @@
 import java.time.LocalDate;
-import static ui.UIMenu.showMenu;
+// import static ui.UIMenu.showMenu;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,12 +12,22 @@ public class Main {
         doctor1.addAvailableAppointment(LocalDate.of(2023, 11, 2), "4:00 p.m");
 
         // Show available appointments
-        System.out.println("The name of the doctor is: " + doctor1.getName() + "\n");
+        /*System.out.println("The name of the doctor is: " + doctor1.getName() + "\n");
         for (Doctor.AvailableAppointment availableAppointment : doctor1.getAvailableAppointments()) {
             System.out.println("Date: " + availableAppointment.getDate() + "\n" + "Time: "
                     + availableAppointment.getTime() + "\n");
-        }
+        }*/
 
-        showMenu();
+        // System.out.println(doctor1);
+
+        // Ligadura dinámica
+        /*User doctor = new Doctor();
+        User patient = new Patient();*/
+
+        // showMenu();
+
+        /*Patient patient = new Patient("Johan Rodriguez", "johandavid.jdr@gmail.com");
+        System.out.println(patient);*/
+
     }
 }

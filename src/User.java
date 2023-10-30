@@ -1,4 +1,5 @@
 public class User {
+    private int id;
     private String name;
     private String email;
     private String address;
@@ -10,6 +11,14 @@ public class User {
     public User(String name, String email) {
         this.name = name;
         this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -46,5 +55,12 @@ public class User {
         } else {
             this.phoneNumber = phoneNumber;
         }
+    }
+
+    // Este método se ejecuta implícitamente al crear un objeto de la clase
+    @Override
+    public String toString() {
+        return "User: " + name + "\n" + "Email: " + email + "\n"
+                + "Address: " + address + "\n" + "Phone number: " + phoneNumber + "\n";
     }
 }

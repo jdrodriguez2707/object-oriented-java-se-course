@@ -28,7 +28,7 @@ public class UIMenu {
             this.lowercase = lowercase;
         }
 
-        public String getLower() {
+        public String getLowercase() {
             return lowercase;
         }
     }
@@ -76,7 +76,7 @@ public class UIMenu {
                 case 1 -> {
                     System.out.println("::Book an appointment");
                     for (int i = 1; i < 4; i++) {
-                        System.out.println(i + ". " + Month.values()[i - 1].getLower());
+                        System.out.println(i + ". " + Month.values()[i - 1].getLowercase());
                     }
                 }
                 case 2 -> System.out.println("::My appointments");
