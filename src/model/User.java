@@ -1,3 +1,5 @@
+package model;
+
 public class User {
     private int id;
     private String name;
@@ -60,7 +62,7 @@ public class User {
     // Este método se ejecuta implícitamente al crear un objeto de la clase
     @Override
     public String toString() {
-        return "User: " + name + "\n" + "Email: " + email + "\n"
+        return "model.User: " + name + "\n" + "Email: " + email + "\n"
                 + "Address: " + address + "\n" + "Phone number: " + phoneNumber + "\n";
     }
 }

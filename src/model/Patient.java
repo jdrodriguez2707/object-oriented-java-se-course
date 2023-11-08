@@ -1,3 +1,5 @@
+package model;
+
 /*
     En la práctica, todos los atributos de una clase deberían ser privados y solo acceder a ellos
     a través de los métodos getter y setter.

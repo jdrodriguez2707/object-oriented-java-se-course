@@ -1,3 +1,5 @@
+package model;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -43,7 +45,7 @@ public class Doctor extends User {
     }
 
     /*
-         La clase Appointment está definida como una clase interna estática dentro de la clase Doctor. Esto significa que cada instancia de Doctor comparte la misma definición de Appointment, y no es necesario crear una instancia de Doctor para crear una instancia de Appointment. Esto se debe a que las clases internas estáticas se asocian directamente con la clase externa, no con instancias específicas de la clase externa.
+         La clase Appointment está definida como una clase interna estática dentro de la clase model.Doctor. Esto significa que cada instancia de model.Doctor comparte la misma definición de Appointment, y no es necesario crear una instancia de model.Doctor para crear una instancia de Appointment. Esto se debe a que las clases internas estáticas se asocian directamente con la clase externa, no con instancias específicas de la clase externa.
          */
     public static class AvailableAppointment {
         private LocalDate date;
