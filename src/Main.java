@@ -1,7 +1,7 @@
 import model.Doctor;
-
-import java.time.LocalDate;
 // import static ui.UIMenu.showMenu;
+import java.time.LocalDate;
+
 
 public class Main {
     public static void main(String[] args) {
