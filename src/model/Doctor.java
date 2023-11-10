@@ -1,35 +1,24 @@
+package model;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Doctor {
+public class Doctor extends User {
+    /*
     //Autoincrement
     private static int nextId = 0; // Aquí al usar static estamos creando una variable propia de la clase y su valor va a ser igual en tiempo real para todos los objetos
     private int id; // Variable propia de cada objeto
-    private String name;
-    private String speciality;
+    */
 
+    private String speciality;
 
     // Método constructor
     public Doctor() {
-        System.out.println("Building the doctor object");
     }
 
-    public Doctor(String name, String speciality) {
-        id = ++nextId;
-        this.name = name;
-        this.speciality = speciality;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public Doctor(String name, String email) {
+        super(name, email); // Enviar los atributos a la superclase
+        // this.speciality = speciality; // Sobreescritura de constructor
     }
 
     public String getSpeciality() {
@@ -50,9 +39,21 @@ public class Doctor {
         return availableAppointments;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "Speciality: " + speciality + "\n" + "Available Appointments: " + "\n" + availableAppointments.toString();
+    }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Hospital employee: Clínica General del Norte");
+        System.out.println("Department: Endocrinology");
+    }
+
+    /*
+         La clase Appointment está definida como una clase interna estática dentro de la clase model.Doctor. Esto significa que cada instancia de model.Doctor comparte la misma definición de Appointment, y no es necesario crear una instancia de model.Doctor para crear una instancia de Appointment. Esto se debe a que las clases internas estáticas se asocian directamente con la clase externa, no con instancias específicas de la clase externa.
+         */
     public static class AvailableAppointment {
-        private static int nextId = 0;
-        private int id;
         private LocalDate date;
         private String time;
 
@@ -60,13 +61,8 @@ public class Doctor {
         }
 
         public AvailableAppointment(LocalDate date, String time) {
-            id = ++nextId;
             this.date = date;
             this.time = time;
-        }
-
-        public int getId() {
-            return id;
         }
 
         public LocalDate getDate() {
@@ -83,6 +79,11 @@ public class Doctor {
 
         public void setTime(String time) {
             this.time = time;
+        }
+
+        @Override
+        public String toString() {
+            return "Appointment " + "\n" + "Date: " + date + "\n" + "Time: " + time + "\n";
         }
     }
 }
