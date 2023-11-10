@@ -16,9 +16,9 @@ public class Doctor extends User {
     public Doctor() {
     }
 
-    public Doctor(String name, String email, String speciality) {
+    public Doctor(String name, String email) {
         super(name, email); // Enviar los atributos a la superclase
-        this.speciality = speciality; // Sobreescritura de constructor
+        // this.speciality = speciality; // Sobreescritura de constructor
     }
 
     public String getSpeciality() {
