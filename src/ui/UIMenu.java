@@ -14,7 +14,7 @@ public class UIMenu {
     public static Doctor doctorLogged;
     public static Patient patientLogged;
 
-    private enum Month {
+    enum Month {
         JANUARY("January"),
         FEBRUARY("February"),
         MARCH("March"),
@@ -30,7 +30,7 @@ public class UIMenu {
 
         private final String lowercase;
 
-        private Month(String lowercase) {
+        Month(String lowercase) {
             this.lowercase = lowercase;
         }
 
@@ -97,7 +97,6 @@ public class UIMenu {
                     if (doctor.getEmail().equals(email)) {
                         isEmailCorrect = true;
                         doctorLogged = doctor;
-                        System.out.println(doctorLogged.getName() + "\n" + doctorLogged.getEmail());
                         // ShowDoctorMenu
                     }
                 }
@@ -108,7 +107,6 @@ public class UIMenu {
                     if (patient.getEmail().equals(email)) {
                         isEmailCorrect = true;
                         patientLogged = patient;
-                        System.out.println(patientLogged.getName() + "\n" + patientLogged.getEmail());
                         // ShowPatientMenu
                     }
                 }
