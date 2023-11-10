@@ -1,4 +1,5 @@
 import model.Doctor;
+import model.User;
 // import static ui.UIMenu.showMenu;
 import java.time.LocalDate;
 
@@ -12,6 +13,11 @@ public class Main {
         doctor1.addAvailableAppointment(LocalDate.now(), "10:00 a.m");
         doctor1.addAvailableAppointment(LocalDate.now(), "1:00 p.m");
         doctor1.addAvailableAppointment(LocalDate.of(2023, 11, 2), "4:00 p.m");
+
+        // Las clases abstractas no pueden ser instanciadas
+        // User user = new User("Johan", "johan@email.com");
+
+        User doctor = new Doctor("Johan", "johan@email.com", "Dentist");
 
         // Show available appointments
         /*System.out.println("The name of the doctor is: " + doctor1.getName() + "\n");
