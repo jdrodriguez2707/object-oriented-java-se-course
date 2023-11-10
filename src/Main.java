@@ -1,14 +1,32 @@
-import model.Doctor;
-import model.Nurse;
-import model.Patient;
-import model.User;
+import model.*;
 // import static ui.UIMenu.showMenu;
 import java.time.LocalDate;
 
 
 public class Main {
     public static void main(String[] args) {
-        User doctor = new Doctor();
+        // Clase anonima. Tiene un corto periodo de vida
+        User user = new User() {
+            @Override
+            public void showDataUser() {
+                System.out.println("Doctor");
+                System.out.println("Hospital: Clinica La Mercedes");
+                System.out.println("Department: Odontology");
+            }
+        };
+
+        user.showDataUser();
+
+        ISchedulable schedulable = new ISchedulable() {
+            @Override
+            public void schedule(LocalDate date, String time) {
+
+            }
+        };
+
+        ISchedulable schedulable1 = new AppointmentDoctor();
+
+        /*User doctor = new Doctor();
         User nurse = new Nurse();
         User patient = new Patient();
 
@@ -16,7 +34,7 @@ public class Main {
         System.out.println();
         nurse.showDataUser();
         System.out.println();
-        patient.showDataUser();
+        patient.showDataUser();*/
 
 
         // Create new doctor
