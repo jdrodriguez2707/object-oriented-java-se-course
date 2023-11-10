@@ -1,16 +1,11 @@
 package ui;
-
 import model.Doctor;
 import model.Patient;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UIMenu {
-    /*public static final String[] MONTHS = {
-            "January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
-            "November", "December"
-    };*/
-
     public static Doctor doctorLogged;
     public static Patient patientLogged;
 
@@ -72,34 +67,31 @@ public class UIMenu {
     }
 
     private static void authUser(int userType) {
-        // userType = 1 -> Doctor
-        // userType = 2 -> Patient
-
         Scanner read = new Scanner(System.in);
-
-        ArrayList<Doctor> doctors = new ArrayList<>();
-
-        doctors.add(new Doctor("Steban Guerrero", "steban@mail.com"));
-        doctors.add(new Doctor("Diego Padilla", "diego@mail.com"));
-        doctors.add(new Doctor("Johan Rodriguez", "johan@mail.com"));
-
-        ArrayList<Patient> patients = new ArrayList<>();
-
-        patients.add(new Patient("Nerys Castro", "nerys@mail.com"));
-        patients.add(new Patient("Kelly Castro", "kelly@mail.com"));
-        patients.add(new Patient("Jhon Rodriguez", "jhon@mail.com"));
-
         boolean isEmailCorrect = false;
+        String email;
+
+        // Doctors
+        ArrayList<Doctor> doctors = new ArrayList<>();
+        doctors.add(new Doctor("Steban Guerrero", "steban@gmail.com"));
+        doctors.add(new Doctor("Diego Padilla", "diego@gmail.com"));
+        doctors.add(new Doctor("Johan Rodriguez", "johan@gmail.com"));
+
+        // Patients
+        ArrayList<Patient> patients = new ArrayList<>();
+        patients.add(new Patient("Nerys Castro", "nerys@gmail.com"));
+        patients.add(new Patient("Jhon Rodriguez", "jhon@gmail.com"));
+        patients.add(new Patient("Kelly Castro", "kelly@gmail.com"));
 
         do {
-            System.out.println("Enter your email address: [mail@gmail.com]");
-            String email = read.nextLine();
+            System.out.println("Enter your email address: [youremail@gmail.com]");
+            email = read.nextLine();
+
             if (userType == 1) {
                 for (Doctor doctor : doctors) {
                     if (doctor.getEmail().equals(email)) {
                         isEmailCorrect = true;
                         doctorLogged = doctor;
-                        // ShowDoctorMenu
                     }
                 }
             }
@@ -109,11 +101,11 @@ public class UIMenu {
                     if (patient.getEmail().equals(email)) {
                         isEmailCorrect = true;
                         patientLogged = patient;
-                        // ShowPatientMenu
                     }
                 }
             }
         } while (!isEmailCorrect);
+
     }
 
     static void showPatientMenu() {
