@@ -1,12 +1,15 @@
 import model.*;
-// import static ui.UIMenu.showMenu;
+import static ui.UIMenu.showMenu;
 import java.time.LocalDate;
 
 
 public class Main {
     public static void main(String[] args) {
+        showMenu();
+
+
         // Clase anonima. Tiene un corto periodo de vida
-        User user = new User() {
+        /*User user = new User() {
             @Override
             public void showDataUser() {
                 System.out.println("Doctor");
@@ -24,7 +27,7 @@ public class Main {
             }
         };
 
-        ISchedulable schedulable1 = new AppointmentDoctor();
+        ISchedulable schedulable1 = new AppointmentDoctor();*/
 
         /*User doctor = new Doctor();
         User nurse = new Nurse();
