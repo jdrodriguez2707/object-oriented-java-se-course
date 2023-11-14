@@ -61,7 +61,6 @@ public class UIMenu {
                 case 2 -> {
                     response = 0;
                     authUser(2);
-                    showPatientMenu();
                 }
                 case 0 -> System.out.println("Thank you for your visit");
                 default -> System.out.println("Please select a correct option");
@@ -89,7 +88,7 @@ public class UIMenu {
         patients.add(new Patient("Jhon Rodriguez", "jhon@mail.com"));
 
         do {
-            System.out.println("Enter your email address: [mail@gmail.com]");
+            System.out.println("Enter your email address: [mail@mail.com]");
             String email = read.nextLine();
 
             if (userType == 1) {
@@ -97,7 +96,7 @@ public class UIMenu {
                     if (doctor.getEmail().equals(email)) {
                         isEmailCorrect = true;
                         doctorLogged = doctor;
-                        // ShowDoctorMenu
+                        UIDoctorMenu.showDoctorMenu();
                     }
                 }
             }

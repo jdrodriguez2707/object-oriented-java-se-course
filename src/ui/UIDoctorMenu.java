@@ -24,7 +24,7 @@ public class UIDoctorMenu {
             response = Integer.parseInt(read.nextLine());
 
             switch (response) {
-                case 1 -> System.out.println("case 1");
+                case 1 -> showAddAvailableAppointmentsMenu();
                 case 2 -> System.out.println("case 2");
                 case 0 -> UIMenu.showMenu();
             }
@@ -52,16 +52,16 @@ public class UIDoctorMenu {
                 System.out.println("Enter the date available: [dd/mm/yyyy]");
                 String date = read.nextLine();
 
-                System.out.println("Your date is " + date + "\n1.Correct \n2.Change date");
+                System.out.println("Your date is " + date + "\n1. Correct \n2. Change date");
                 int responseDate = Integer.parseInt(read.nextLine());
                 if (responseDate == 2) continue;
 
                 int responseTime = 0;
                 String time = "";
                 do {
-                    System.out.println("Enter the time available for the date: " + date + " [16:00]");
+                    System.out.println("Enter the time available for the date " + date + ": [16:00]");
                     time = read.nextLine();
-                    System.out.println("Your time is " + time + "\n1.Correct \n2.Change time");
+                    System.out.println("Your time is " + time + "\n1. Correct \n2. Change time");
                     responseTime = Integer.parseInt(read.nextLine());
                 } while (responseTime == 2);
 
