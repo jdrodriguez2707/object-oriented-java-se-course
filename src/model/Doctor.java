@@ -13,6 +13,7 @@ public class Doctor extends User {
     */
 
     private String speciality;
+    private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
     // Método constructor
     public Doctor() {
@@ -30,8 +31,6 @@ public class Doctor extends User {
     public void setSpeciality(String speciality) {
         this.speciality = speciality;
     }
-
-    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
     public void addAvailableAppointment(String date, String time) {
         availableAppointments.add(new AvailableAppointment(date, time));
@@ -73,12 +72,12 @@ public class Doctor extends User {
             this.time = time;
         }
 
-        public Date getDate() {
+        public Date getDate(String DATE) {
             return date;
         }
 
         // Retornar date como String
-        public String getDate(String DATE) {
+        public String getDate() {
             return format.format(date);
         }
 

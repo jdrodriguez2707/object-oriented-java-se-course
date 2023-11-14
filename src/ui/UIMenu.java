@@ -106,7 +106,7 @@ public class UIMenu {
                     if (patient.getEmail().equals(email)) {
                         isEmailCorrect = true;
                         patientLogged = patient;
-                        // ShowPatientMenu
+                        UIPatientMenu.showPatientMenu();
                     }
                 }
             }
