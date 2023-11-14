@@ -1,12 +1,12 @@
 package model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class AppointmentDoctor implements ISchedulable {
     private int id;
     private Patient patient;
     private Doctor doctor;
-    private LocalDate date;
+    private Date date;
     private String time;
 
     public int getId() {
@@ -33,11 +33,11 @@ public class AppointmentDoctor implements ISchedulable {
         this.doctor = doctor;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -51,7 +51,7 @@ public class AppointmentDoctor implements ISchedulable {
 
 
     @Override
-    public void schedule(LocalDate date, String time) {
+    public void schedule(Date date, String time) {
 
     }
 }
