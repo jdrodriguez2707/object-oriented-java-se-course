@@ -59,7 +59,6 @@ public abstract class User {
         }
     }
 
-    // Este método se ejecuta implícitamente al crear un objeto de la clase
     @Override
     public String toString() {
         return "model.User: " + name + "\n" + "Email: " + email + "\n"

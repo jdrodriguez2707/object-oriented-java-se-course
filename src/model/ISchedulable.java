@@ -1,7 +1,8 @@
 package model;
 
-import java.util.Date;
+
+import java.time.LocalDate;
 
 public interface ISchedulable {
-    void schedule(Date date, String time);
+    void schedule(LocalDate date, String time);
 }
