@@ -1,6 +1,8 @@
 package model;
 
-import java.time.LocalDate;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ArrayList;
 
 public class Doctor extends User {
@@ -11,6 +13,7 @@ public class Doctor extends User {
     */
 
     private String speciality;
+    private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
     // Método constructor
     public Doctor() {
@@ -29,9 +32,7 @@ public class Doctor extends User {
         this.speciality = speciality;
     }
 
-    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
-
-    public void addAvailableAppointment(LocalDate date, String time) {
+    public void addAvailableAppointment(String date, String time) {
         availableAppointments.add(new AvailableAppointment(date, time));
     }
 
@@ -54,22 +55,33 @@ public class Doctor extends User {
          La clase Appointment está definida como una clase interna estática dentro de la clase model.Doctor. Esto significa que cada instancia de model.Doctor comparte la misma definición de Appointment, y no es necesario crear una instancia de model.Doctor para crear una instancia de Appointment. Esto se debe a que las clases internas estáticas se asocian directamente con la clase externa, no con instancias específicas de la clase externa.
          */
     public static class AvailableAppointment {
-        private LocalDate date;
+        private int id;
+        private Date date;
         private String time;
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
         public AvailableAppointment() {
         }
 
-        public AvailableAppointment(LocalDate date, String time) {
-            this.date = date;
+        public AvailableAppointment(String date, String time) {
+            try {
+                this.date = format.parse(date);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
             this.time = time;
         }
 
-        public LocalDate getDate() {
+        public Date getDate(String DATE) {
             return date;
         }
 
-        public void setDate(LocalDate date) {
+        // Retornar date como String
+        public String getDate() {
+            return format.format(date);
+        }
+
+        public void setDate(Date date) {
             this.date = date;
         }
 
